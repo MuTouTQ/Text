@@ -1,0 +1,755 @@
+
+一、Android基础阶段大纲：
+
+第1周：【UI基础】
+第1天： Android环境搭建及工程目录介绍
+1.1 Android开发(版本：SDK21及以上版本)环境搭建
+	1.1.1 Android SDK目录介绍(重点介绍docs中api)
+	1.1.2 Eclipse界面介绍
+	1.1.3 Eclipse常规设置(字符集(utf-8)设置等)
+	1.1.4 AVD设置
+1.2 Android发展史、移动设备操作系统、四层系统架构等理论知识点
+	1.2.1 Android发展史介绍
+	1.2.2 移动设备操作系统介绍
+	1.2.3 Android四层系统架构的介绍
+1.3 HelloWorld程序
+	1.3.1 编写HelloWorld程序
+	1.3.2 Eclipse开发APP的目录结构介绍
+1.4 adb shell简介(install uninstall)
+
+第2天： 常用UI布局及主要控件
+2.1 LinearLayout【重点讲解】
+	2.1.1 View常用属性     
+		android:id
+		android:background 
+		android:onClick
+		android:padding
+		android:visibility
+		android:alpha
+		android:layout_height
+		android:layout_width
+		android:layout_margin
+	2.1.2 Android中长度单位的概念、区别及转换公式（sp、dp、dip、px、dpi)
+	2.1.3 LinearLayout特有属性 
+ 		android:orientation 
+ 		android:layout_weight  
+ 		android:gravity 
+ 		android:layout_gravity  
+ 		android:weightSum(权重总和)
+2.2 RelativeLayout
+	2.2.1 RelativeLayout特有属性（15个）
+		A、第一组：指兄弟控件之间的相对位置。该组属性的值是另一个控件的id。
+		layout_toRightOf
+		layout_toLeftOf
+		layout_above
+		layout_below           
+		
+		B、第二组：指兄弟控件之间的对齐关系。该组属性的值是另一个控件的id。
+		layout_alignRight
+		layout_alignLeft
+		layout_alignTop 
+		layout_alignBottom  
+		
+		C、第三组：指控件与父布局之间的对齐关系。该组属性的值是true或者false。
+		layout_alignParentRight
+		layout_alignParentLeft                
+		layout_alignParentTop                
+		layout_alignParentBottom            
+		layout_centerInParent                 
+		layout_centerVertical                   
+		layout_centerHorizontal               
+2.3 FrameLayout
+2.4 GridLayout
+	2.4.1 GridLayout 特有属性
+		android:layout_column
+		android:layout_row
+		android:layout_columnSpan
+		android:layout_rowSpan
+		android:layout_gravity
+2.5 TextView基本用法
+	2.5.1 TextView属性
+		andorid:text
+		android:textColor
+		android:textSize  
+		android:singleLine
+		android:gravity
+		android:drawableLeft
+		android:drawableRight
+		android:drawableTop
+		android:drawableBottom
+		android:autoLink
+
+第3天： 表单UI控件及相应控件的事件处理
+3.1 EditText、Button、ImageView
+	3.1.1 EditText常用属性介绍
+		android:inputType
+   	android:hint
+   	android:imeOptions  
+	3.1.2 Button常用属性介绍及监听器使用
+		android:onClick
+		Button绑定监听器方式
+	3.1.3 ImageView常用属性介绍
+		andorid:src
+		android:adjustViewBounds
+		android:maxHeight
+		andorid:maxWidth
+		android:scaleType  
+3.2 RadioButton及RadioGroup的用法【重点】
+	3.2.1 RadioButton、RadioGroup的常用属性
+	3.2.2 绑定RadioGroup特有监听器
+3.3 CheckBox的多选效果及监听
+	3.3.1 CheckBox的常用属性
+	3.3.2 绑定CheckBox特有监听器
+3.4 Toast的基本用法
+
+第4天： Spinner、AutoCompleteTextView、ScrollView及适配器、数组资源
+4.1 Spinner
+	4.1.1 Spinner的常用属性  android:entries=""
+	4.1.2 Spinner的常用方法
+4.2 适配器
+	4.2.1 适配器的介绍
+	4.2.2 ArrayAdapter的介绍及使用
+4.3 数组资源
+	4.3.1 定义数组资源
+	4.3.2 获取数组资源
+4.4 AutoCompleteTextView
+	4.4.1 AutoCompleteTextView的常用属性
+	4.4.2 AutoCompleteTextView的常用方法
+4.5 ScrollView
+ 	4.5.1 垂直ScrollView的使用
+ 	4.5.2 HorizontalScrollView的使用
+4.6 ProgressBar、SeekBar、RatingBar   
+	4.6.1 ProgressBar的基本用法
+	4.6.2 SeekBar的基本用法及美化
+	4.6.3 RatingBar的基本用法及美化
+
+第5天： UI美化及Android资源            
+5.1 Style的简单用法
+	5.1.1 style的基本使用
+	5.1.2 style的继承
+	5.1.3 利用selector及shape修改多选框的显示效果
+	5.1.4 利用selector实现选中与否、改变默认RadioButton的显示效果
+5.2 Android资源汇总
+	5.2.1 id、字符串资源、颜色资源、尺寸资源、布局资源、数组资源、样式和主题资源
+	5.2.2 菜单资源、图像资源、特殊Drawable资源、动画资源
+	5.2.3 原生xml资源、raw资源、自定义属性资源
+
+第2周：【应用核心组件初识】
+第6天：Activity生命周期及页面跳转传值  
+6.1 Activity的声明和使用
+	6.1.1 创建Activity
+	6.1.2 在清单文件中配置Activity
+	6.1.3 启动Activity
+6.2 Activity生命周期
+	6.2.1 Activity生命周期的作用
+	6.2.2 Activity生命周期方法
+	6.2.3 Activity生命周期方法执行顺序
+	6.2.4 横竖屏切换时Activity生命周期变化（Manifest.xml设置configChange）
+6.3 Activity现场保护 
+6.4 Activity基本页面跳转及传值
+	6.4.1 使用Intent实现页面跳转
+	6.4.2 使用Bundle实现传递对象
+	6.4.3 使用Application全局对象传值
+6.5 Activity具有返回值的页面跳转
+  6.5.1 启动Activity回传数据 
+
+第7天：Activity启动模式及Intent七大属性    
+7.1 Task和Back Stack的基本概念
+	7.1.1 Task的介绍
+	7.1.2 Back Stack的介绍
+	7.1.3 Task和Back Stack的关系
+	7.1.4 退出APP时销毁回退栈中所有Activity（context.finishAffinity()）
+7.2 Activity的启动模式
+ 	7.2.1 Activity的启动模式及介绍
+7.3 Intent属性的特点及用法
+	7.3.1 Intent中的ComponentName属性
+	7.3.2 Intent中Action属性
+	7.3.3 Intent中Category属性
+	7.3.4 Intent中Data属性
+	7.3.5 Intent中Type属性
+	7.3.6 Intent中Extra属性
+	7.3.7 Intent中Flags属性
+
+第8天： AsyncTask异步任务
+8.1 使用异步任务的必要性
+ 	8.1.1 Android中单线程模型
+8.2 异步任务的用法
+	8.2.1 AsyncTask中范型参数说明
+	8.2.2 AsyncTask中方法的说明
+	8.2.3 异步任务与线程池
+	8.2.4 异步任务的取消
+
+第9天： ListView基本用法及适配器介绍
+9.1 ListView基本用法
+	9.1.1 ListView常用属性
+	9.1.2 ListView常用方法 (setEmptyView() setHeaderView() setFooterView())
+	9.1.3 ListView常用监听方法
+9.2 SimpleAdapter
+	9.2.1 ListView与ArrayAdapter的使用
+	9.2.2 ListView与SimpleAdapter的使用
+	9.2.3 SimpleAdapter与ViewBinder结合使用
+9.3 BaseAdapter
+	9.3.1 BaseAdapter中的四个方法的说明
+	9.3.2 ListView的ConvertView复用
+
+第10天：ListView优化及分页加载数据、GridView加载网络图片、ExpandableListView
+10.1 ListView优化
+	10.1.1 内存空间优化(ConvertView)
+	10.1.2 运行时间优化（ViewHolder）     
+	10.1.3 ListView的item多布局的复用
+10.2 ListView滚动监听实现分页加载数据
+	10.2.1 ListView滚动事件OnScrollListener
+	10.2.2 ListView实现分页效果
+10.3 GridView加载图片
+	10.3.1 GridView的常用属性
+	10.3.2 GridView的基本用法
+	10.3.3 GridView的事件
+10.4 ExpandableListView的用法
+
+周末综合练习
+周末作业包括：安装Android Studio。
+
+【备注：】第三周Android开始，必须使用Android Studio开发环境教学
+第3周：【数据存储】
+第11天：菜单及对话框
+11.1 OptionsMenu
+	11.1.1 OptionsMenu创建方式（菜单资源、Java程序）
+	11.1.2 菜单项点击事件（onMenuItemSelected()、onOptionsItemSelected()）
+11.2 ContextMenu
+	11.2.1 ContextMenu创建方式
+	11.2.2 上下文菜单项点击事件
+	11.2.3 上下文菜单绑定注册
+11.3 PopupMenu
+	11.3.1 PopupMenu的创建
+11.4 PopupWindow
+	11.4.1 PopupWindow实现自定义菜单
+	11.4.2 PopupWindow常用方法（showAsLocation()、showAsDropDown()）
+11.5 AlertDialog
+	11.5.1 AlertDialog的创建及点击事件
+11.6 ProgressDialog
+	11.6.1 ProgressDialog的创建及样式
+11.7 列表对话框
+	11.7.1 列表对话框的创建
+11.8 自定义Dialog
+	11.8.1 自定义Dialog的实现
+
+第12天：数据存储
+12.1 SharedPreferences
+	12.1.1 SharedPreferences使用场景;
+	12.1.2 SharedPreferences的常用方法
+12.2 内部存储
+	12.2.1 内部存储的概念
+	12.2.2 内部存储的实现
+12.3 外部存储
+	12.3.1 外部存储的概念
+	12.3.2 外部存储的存储目录
+	12.3.3 外部存储的实现
+	12.3.4 Api23外部存储的动态授权管理【新增重点】
+12.4 存储Bitmap图片到外部存储
+	12.4.1 封装外部存储工具类
+	12.4.2 存储图片到外部存储空间
+	12.4.3 对图片存储质量进行设置
+
+第13天：SQLite数据库与CursorAdapter适配器
+13.1 回顾SQLite
+	13.1.1 SQLite数据库的特点
+	13.1.2 SQL常用语法
+13.2 SQLiteOpenHelper的用法
+	13.2.1 SQLiteOpenHelper类介绍
+	13.2.2 数据库和表的创建
+	13.2.3 SQLiteDatebase数据库的升级
+	13.2.4 SQLiteDatabase实现CRUD的少参方法（rawQuery、execSQL）
+	13.2.5 SQLiteDatabase实现CRUD的多参方法（insert、update、delete、query）
+13.3 CursorAdapter
+	13.3.1 CursorAdapter的用法
+	13.3.2 CursorAdapter结合ViewBinder
+
+第14天：ContentProvider
+14.1 ContentResolver实现系统数据库的操作
+	14.1.1 ContentProvider与ContentResolver的概念及关系
+	14.1.2 利用ContentResolver实现系统数据的操作(联系人【查询】、媒体库文件、通话记录、短信记录);
+	14.1.3 Api23通话记录和短信记录的动态授权管理【新增重点】
+14.2 自定义ContentProvider
+	14.2.1 自定义ContentProvider的实现步骤
+
+第15天：Loader
+15.1 CursorLoader的用法
+	15.1.1 CursorLoader的使用场景
+	15.1.2 CursorLoader的用法
+15.2 AsyncTaskLoader加载本地数据
+	15.2.1 AsyncTaskLoader与CursorLoader对比
+	15.2.2 AsyncTaskLoader的用法
+15.3 ActionBar的简单用法
+	15.3.1 ActionBar简介(支持V7的ActionBar）
+	15.3.2 ActionBar上添加动作项（回顾OptionsMenu、SubMenu及MenuItem）
+	15.3.3 Action View的介绍
+	15.3.4 SearchView在ActionBar上的用法
+	15.3.5 使用ActionBar上的SearchView结合CursorLaoder实现搜索查询
+  
+周末案例：对本周知识点综合练习【带离线阅读的新闻系统】
+
+
+第4周： 【移动开发主流界面实现】
+第16天：动画资源
+16.1 帧动画
+	16.1.1 帧动画的具体实现
+16.2 补间动画
+	16.2.1 补间动画的类型（透明度、缩放、旋转、平移、AnimationSet）
+	16.2.2 补间动画的动画资源的常用属性及实现
+	16.2.3 补间动画的Java代码实现
+	16.2.4 补间动画的监听方法
+16.3 属性动画
+	16.3.1 属性动画介绍
+	16.3.2 属性动画与补间动画的区别
+	16.3.3 属性动画资源文件的常用属性
+	16.3.4 属性动画的具体实现
+
+第17天：Fragment
+17.1 Fragment基本用法
+	17.1.1 Fragment简介
+	17.1.2 Fragment生命周期
+	17.1.3 静态Fragment
+	17.1.4 动态Fragment
+	17.1.5 FragmentTransaction
+	17.1.6 Fragment的回退栈
+	17.1.7 动态创建Fragment时自定义动画效果
+17.2 Fragment传值
+	17.2.1 Fragment与Activity之间的传值
+	17.2.2 Fragment之间传值
+	17.2.3 利用Fragment之间传值实现左右Fragment结构的信息展示
+17.3 Fragment性能优化
+	17.3.1 Fragment优化的必要和实现(add、remove、show、hide、attach、detach)
+	
+第18天：ViewPager
+18.1 ViewPager与适配器
+	18.1.1 ViewPager的基本使用（ViewPager实现欢迎引导页）
+	18.1.2 ViewPager的适配器
+		PagerAdapter、FragmentPagerAdapter、FragmentStatePagerAdapter
+18.2 Picasso框架加载图片的基本用法
+	18.2.1 使用Picasso加载网络图片
+18.3 第三方图片缩放视图PhotoView【新增】
+	18.3.1 PhotoView实现图片缩放展示		
+18.4 ViewPager加载网络图片
+	18.4.1 ViewPager结合Picasso框架及PhotoView加载网络图片实现广告效果
+18.4 PagerAdapter的优化
+	18.4.1 PagerAdapter优化的必要和实现
+  
+第19天：书签导航
+19.1 书签导航多种实现方式【无需代码实现】
+	19.1.1 TabActivity + TabHost【过期】
+	19.1.2 Fragment + FragmentTabHost
+	19.1.3 Fragment + RadioGroup
+	19.1.4 Fragment + ActionBar 
+	19.1.5 Fragment + ViewPager + ActionBar
+	19.1.6 Fragment + ViewPager + PagerTabStrip
+	19.1.7 Fragment + ViewPager + RadioGroup
+	19.1.8 Fragment + ViewPager + HorizontalScrollView
+	19.1.9 Fragment + ViewPager + TabLayout
+	19.1.10 ViewPageIndicator（第三方技术）
+19.2 RadioGroup + ViewPager + Fragment实现导航
+19.3 HorizontalScrollView + ViewPager + Fragment实现导航
+19.4 TabLayout(5.0Material Design新技术)
+	19.4.1 TabLayout介绍及作用
+	19.4.2 TabLayout与ViewPager、Fragment配合实现TAB导航效果
+
+第20天：Handler、Looper消息传递机制
+20.1 Handler、Looper消息传递机制的原理
+	20.1.1 Handler简介
+	20.1.2 Handler具体用法
+	20.1.3 Handler、Looper消息传递机制的原理分析
+20.2 Handler、Looper源码
+	20.2.1  Handler、Looper源码分析
+20.3 EventBus 【新增】
+	20.3.1 EventBus简介
+	20.3.2 EventBus实现Fragment之间传值
+	20.3.2 利用EventBus实现左右Fragment结构的信息展示
+
+周末综合练习【涵盖前四周所有知识点】
+
+
+############################################################
+第5周：【应用核心组件进阶】
+第21天：ToolBar及Material Design新UI组件
+21.1 ToolBar
+	21.1.1 ToolBar介绍
+	21.1.2 ToolBar当做ActionBar的用法
+	21.1.3 ToolBar的Standalone用法
+21.2 DrawerLayout
+	21.2.1 抽屉布局的用法
+	21.2.2 DrawerLayout结合ToolBar实现抽屉收缩
+21.3 CoordinatorLayout及其内部布局
+	21.3.1 CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout、NestedScrollView介绍
+	21.3.2 特殊属性介绍：layout_behavior、layout_scrollFlags、layout_collapseMode
+	21.3.3 CoordinatorLayout协调Toolbar实现Toolbar伸缩滚动效果
+21.4 TextInputLayout
+	21.4.1 TextInputLayout设置监听器与TextWatcher
+	21.4.2 回顾正则表达式的用法
+21.5 FloatingActionButton
+	21.5.1 特殊属性介绍：layout_anchor、layout_anchorGravity
+21.6 Snackbar
+	21.6.1 Snackbar与Toast的对比
+	21.6.2 监听Action
+
+
+第22天：BroadcastReceiver及Notification
+22.1 Notification (普通通知、大视图通知、进度条通知、自定义通知)
+	22.1.1	Notification的作用
+	22.1.2  普通通知的用法
+	22.1.3  PendingIntent的用法
+	22.1.4  Notification的Flag属性
+	22.1.5	大视图通知
+	22.1.6  进度条通知
+	22.1.7  自定义通知
+22.2 广播接收器
+	22.2.1	广播接收器的概念、作用及注册
+	22.2.2  广播的分类（粘性广播、非粘性广播、本地广播、有序广播、无序广播）
+	22.2.4  广播接收器实现系统开机监听
+	22.2.5  广播接收器实现来短信监听
+	22.2.6  广播接收器实现来电和播出电话监听
+	22.2.7	广播接收器实现耳机插入及拔出监听
+	22.2.8  广播接收器实现网络状态改变监听
+	22.2.9  广播接收器实现电量改变监听
+22.3 自定义发送广播
+	22.3.1  自定义发送广播的做法
+	22.3.2  发送无序广播
+	22.3.3  发送有序广播	
+	22.3.4  发送本地广播（LocalBroadcastManager）
+	22.3.5  注册本地广播接收器
+	
+第23天： Service基础
+23.1 Service介绍
+	23.1.1 Service的概念及使用场景
+	23.1.2 Service的分类
+	23.1.3 Service生命周期
+	23.1.4 Service注册
+23.2 Start Service
+	23.2.1 Start Service实现音乐播放器
+	23.2.2 粘性服务与非粘性服务
+23.3 IntentService
+	23.3.1 IntentService介绍
+	23.3.2 IntentService实现网络视频文件下载
+	23.3.3 DownloadManager实现网络视频文件下载
+23.4 Bind Service
+	23.4.1 Bind Service实现音乐播放器
+23.5 两种服务混合使用实现MediaPlayer音乐播放
+
+第24天： 跨进程的Service
+24.1 AIDL
+	24.1.1 AIDL的概念
+	24.1.2 AIDL的用法（Parcelable）
+24.2 Messenger
+	24.2.1 Messenger的概念
+	24.2.2 Messenger的用法
+
+
+第25天： 事件分发消费机制
+25.1 事件分发消费机制原理
+	25.1.1 事件分发消费机制的原理分析
+25.2 事件分发消费机制的应用场景
+	25.2.1 如何解决ViewPager嵌套ViewPager的冲突解决
+	25.2.2 解决ListView中item的Button事件冲突
+	25.2.3 DrawerLayout的基本用法
+	25.2.4 DrawerLayout中事件冲突问题的解决
+
+
+周末综合作业
+
+
+第6周：【View深入探究】
+第26天： 自定义View（一）
+26.1 自定义View介绍
+	26.1.1 为什么要自定义View
+	26.1.2 回顾View和ViewGroup的职责
+	26.1.3 自定义View的常规做法
+26.2 自绘制的自定义View
+	26.2.1 重写View中的onDraw()方法
+	26.2.2 画布画笔（Canvas、Paint）
+	26.2.3 重写View中的onMeasure()方法
+	26.2.4 自定义属性
+	26.2.5 实现自定义圆形进度条ProgressView
+	26.2.6 实现自定义记事本NoteEditText
+	26.2.7 实现自定义时钟ClockView
+26.3 组合式自定义View
+	26.3.1 通过填充布局实现组合自定义View
+	26.3.2 无需布局实现组合自定义View
+	26.3.3 实现美化的自定义Popmenu【选讲】
+	26.3.4 具有清空按钮的EditText【选讲】
+
+第27天：自定义View（二）        
+27.1 具有手势监听的自定义View
+	27.1.1 手势的基本用法
+	27.1.2 实现具有手势删除item的Listview
+	27.1.3 实现联系人右侧的字母索引栏	
+27.2 继承于ViewGroup的自定义布局
+	27.2.1 重写View中的onLayout()方法
+	27.2.2 实现自定义侧滑广告条
+	27.2.3 实现自定义流式布局FlowLayout
+	
+第28天： 第三方自定义View及机型适配
+28.1 瀑布流GridView（StaggeredGridView）
+28.2 Item侧滑新增菜单的ListView（SwipeListView）
+28.3 机型适配介绍及相关重要概念回顾
+	28.3.1 Android中机型适配出现的原因（系统碎片和屏幕碎片）
+	28.3.2 机型适配的思路
+	28.2.1 屏幕尺寸、屏幕分辨率、屏幕像素密度及密度比值
+		dp、dip、dpi、sp、px、mdpi、hdpi、xhdpi、xxhdpi
+28.4 机型适配的解决方案
+	28.4.1 屏幕适配	
+	（相对布局、尺寸限定符、最小宽度限定符、屏幕方向限定符、自动拉伸位图）
+	28.4.2 版本适配
+	28.4.3 语言自适应
+
+
+第29天：RecyclerView及CardView
+29.1 Android5.0新技术介绍（Material Design）
+	29.1.1 设计理念
+	29.1.2 新增控件
+29.2 RecyclerView
+	29.2.1 LayoutManager
+	29.2.2 ItemDecoration
+	29.2.3 Adapter及Adapter.ViewHolder
+	29.2.4 ItemAnimator, 
+	29.2.5 SpanLookup
+29.3 CardView
+	29.3.1 CardView常用属性：cardElevation, cardMaxElevation, cardCornerRadius
+29.4 RecyclerView与ListView比较
+	29.4.1 setOnItemClickListener
+	29.4.2 Adapter与ViewHolder 
+	29.4.3 Item多种布局的RecyclerView
+	29.4.4 瀑布流式RecyclerView
+	29.4.5 自定义ExpandableRecyclerView
+
+
+第30天：SwipeRefreshLayout、PullToRefresh及Ultra PullToRefresh
+30.1 SwipeRefreshLayout
+	30.1.1 配置与事件回调
+	30.1.2 SwipeRefreshLayout与ListView、RecyclerView配合
+30.2 PullToRefresh框架
+	30.2.1 导入第三方工程库并配置
+	30.2.2 事件回调
+	30.2.3 多种可下拉刷新的控件
+	30.2.4 PullToRefreshBase的重写
+	30.2.5 PullToRefresh与ListView、RecyclerView配合
+30.3 Ultra PullToRefresh
+	30.3.1 导库并配置
+	30.3.2 事件回调
+	30.3.3 多种下拉效果
+	30.3.4 Ultra PullToRefresh与ListView、RecyclerView配合
+
+二、Android项目实战阶段大纲：
+
+第7周：【知名第三方框架】
+
+第31天：LruCache与Bitmap二次采样、WebView与html5
+31.1 LruCache
+	31.1.1 LruCache的概念
+	31.1.2 LruCache的用法
+31.2 二次采样
+	31.2.1 二次采样的意义
+	31.2.2 封装二次采样生成缩略图工具类
+31.3 WebView
+	31.3.1 WebView介绍
+	23.3.2 WebView基本用法
+	31.3.3 WebView与html5交互
+
+
+
+第32天：OkHttp网络访问框架及Picasso
+32.1 OkHttp框架
+		32.1.1 OkHttp框架的介绍
+		32.1.2 Http请求方法：GET、POST
+		32.1.3 同步请求、异步请求
+		32.1.4 OKHttp实现POST上传文件
+		32.1.5 OKHttp性能优化
+		32.1.6 OKHttp工具类封装
+32.2 Picasso加载图片的高级用法
+		32.2.1 Picasso常用设置功能
+			1、设置占位图片
+			2、无淡入淡出  
+			3、图片重新调整大小
+			4、图片裁切类型
+			5、自定义图像变形
+			6、图片旋转
+			7、设置图片质量
+			8、内存缓存策略 
+			9、设置tag标签
+			10、新进程中查看大图 
+		32.2.2 Picasso在Application中常见设置
+			1、设置内存缓存大小
+			2、下载图片质量
+			3、配置网络加载器 
+			4、设置调试标识
+		32.2.3 Picasso性能优化
+			通过设置网络加载器，实现与OkHttp优化配合
+
+第33天：SlidingPaneLayout、NavigationView及第三方SlidingMenu
+33.1 SlidingPaneLayout
+		33.1.1 DrawerLayout与SlidingpaneLayout的区别
+		33.1.2 SlidingPaneLayout的作用及用法	
+33.2 NavigationView(5.0Material Design新技术)
+		33.2.1 NavigationView中HeaderLayout属性设置
+		33.2.2 NavigationView中Menu属性设置
+		33.2.3 NavigationView监听事件
+		33.2.4 NavigationView结合DrawerLayout使用
+33.3 第三方侧滑菜单SlidingMenu
+		33.3.1 SlidingMenu常用菜单设置
+
+
+第34天： 百度地图或高德地图
+34.1 百度地图基本用法
+	34.1.1 百度地图API概述
+	34.1.2 百度地图密钥申请
+	34.1.3 百度地图配置
+	34.1.4 显示基本地图（交通地图、卫星地图、热力地图）
+	34.1.5 百度地图定位
+	34.1.6 百度地图覆盖物基本用法	
+	34.1.7 混淆的意义及地图的混淆配置
+34.2 百度地图搜索
+	34.2.1 POI检索
+	34.2.2 出行线路规划（公交、步行、自驾）
+	34.2.3 公交路线查询
+
+
+第35天：打包混淆、数字签名及SVN版本控制管理、git托管
+35.1 打包
+	35.1.1 基本打包
+	35.1.2 资源打包
+	35.1.3 清单文件
+	35.1.4 按渠道打包
+	35.1.5 调试
+35.2 混淆
+	35.2.1 混淆的必要性
+	35.2.2 开启混淆
+	35.2.3 混淆配置：保留类，保留方法，忽略错误
+35.3 数字签名
+	35.3.1 签名的意义
+	35.3.2 生成keystore
+	35.3.3 配置签名
+	35.3.4 签名的原理
+35.4 SVN搭建
+	35.4.1 SVN介绍	
+	35.4.2 使用SVN的必要性
+	35.4.3 SVN的使用
+35.5 git托管
+	35.5.1 git托管的作用	
+	35.5.2 git简单操作步骤
+	35.5.3 git常用指令
+
+第8周：【5.0新技术】
+
+第36天：Fresco框架（壁画）与ButterKnife（依赖注入框架）
+36.1 Fresco加载图片框架（中文文档）
+	36.1.1 Fresco框架的介绍
+	36.1.2 简单图片请求
+	36.1.3 Fresco通用配置:内存缓存大小，磁盘缓存大小及位置
+	36.1.4 图片加载配置:下载尺寸，填充模式，加载中图片，错误图片，顶层，底层，图片变形
+36.2 ButterKnife（依赖注入框架）的用法
+
+第37天：Retrofit网络访问框架	
+37.1 Retrofit框架
+		37.1.1 Retrofit2.0框架介绍
+		37.1.2 Http请求方法：GET、POST
+		37.1.3 Retrofit框架实现POST上传文件
+		37.1.4 Retrofit框架性能优化
+		37.1.5 Retrofit框架工具类封装
+
+第38天 xUtils3.0框架
+38.1 xUtils框架的用法
+	38.1.1 xUtils3.0框架之ViewUtils依赖注入的用法
+	38.1.2 xUtils3.0框架之HttpUtils实现网络访问
+	38.1.3 xUtils3.0框架之BitmapUtils实现网络图片加载
+	38.1.4 xUtils3.0框架之DBUtils实现ORM
+
+
+第39天：ORMLite框架与ActiveAndroid框架
+39.1 ORMLite框架（数据库ORM框架）
+39.2 ActiveAndroid（数据库ORM框架）
+
+第40天：媒体播放器
+40.1 视频播放器VideoView
+40.2 SurfaceView及MediaPlayer
+	40.2.1 SurfaceView介绍与View区别
+	40.2.2 SurfaceView使用步骤
+	40.2.3 MediaPlayer.setDisplay
+	40.2.4 MediaPlayer加载网络视频
+40.3 播放器全屏显示与恢复
+	40.3.1 VideoView 全屏显示 onMeasure重写
+	40.3.2 Activity 点击切换横屏方法
+40.4 ListView的item实现视频播放
+	40.4.1 Item显示视频
+	40.4.2 单Item播放
+	40.4.3 Item滚出时停止播放
+40.5 Vitamio（维他密播放器）
+	40.5.1 Vitamio介绍
+	40.5.2 导入Vitamio第三方工程库
+	40.5.3 Vitamio的基本用法
+	40.5.4 Vitamio实现自定义播放控制条	
+
+第41天：摄像头、传感器、ZXing二维码
+41.1 实现摄像头拍照
+	41.1.1 利用Intent拍照返回Bitmap方式
+	41.1.2 Intent拍照保存文件方式
+	41.1.3 调用摄像头API实现自定义的摄像功能【选讲】
+41.2 传感器
+	41.2.1 传感器介绍
+	41.2.2 传感器管理器
+	41.2.3 传感器监听注册
+	41.2.4 传感器基本使用步骤
+	41.2.5 加速度传感实现仿微信《摇一摇》
+41.3 ZXing生成二维码
+	41.3.1 二维码生成，生成BitMatrix转Bitmap
+	41.3.2 配置生成二维码的容错等级
+	41.3.3 制作带有中心Logo的二维码
+41.4 ZXing实现二维码扫描【选讲】
+	41.4.1 导包
+	41.4.2 附加代码包含扫描Activity
+	41.4.3 ZXing Activity ACTION与扫描操作
+
+第42天：JPush极光推送、ShareSDK一键分享及第三方登录
+42.1 JPush极光推送
+	42.1.1 推送原理
+	42.1.2 JPush推送的使用步骤
+	42.1.3 通知推送
+	42.1.4 自定义消息推送
+42.2 ShareSDK一键分享
+	42.2.1 一键分享的作用
+	42.2.2 注册集成分享
+	42.2.3 实现分享的步骤
+42.3 第三方登录
+	42.3.1 第三方登录API
+	42.3.2 OAuth介绍
+
+第9周：
+第43天：加密解密与网络支付
+43.1 编码解码（Base64、URLEncode、URLDecode）
+	43.1.1 Base64的原理
+	43.1.2 Base64及URLEncode、URLDecode的用法
+43.2 对称加密（AES 、DES、3DES）
+	43.2.1 封装AES 、DES加密方法
+43.3 非对称加密（RSA）
+	43.3.1 封装AES 、DES加密方法
+43.4 消息摘要（MD5、 SHA-1)
+	43.4.1 封装MD5 、SHA-1加密方法	
+43.5 Alipay支付
+43.6 微信支付
+
+第44天至毕业：
+项目实战过程中讲解内容：
+1、Git、UML
+2、XMPP
+3、常见面试题
+4、移动端与服务器端的交互流程
+5、移动开发工程师与web工程师工作配合的流程
+6、面试常用技巧（面试禁忌）
+7、开发规范（代码规范）
+
+
+
+
+
+
+
+
+
+
+

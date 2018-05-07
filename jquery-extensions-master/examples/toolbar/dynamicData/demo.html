@@ -1,0 +1,90 @@
+﻿<div>
+    <script type="text/javascript">
+        $(function () {
+            var t = $("#tt1");
+            t.toolbar({
+                method: "get",
+                url: "toolbar/toolbar-data.json",
+                onResize: function (width, height) { },
+                onLoadSuccess: function (data) { },
+                onLoadError: $.easyui.ajaxError(),
+                onBeforeLoad: function (param) { }
+            });
+
+            $("#tt2").toolbar({
+                data: [
+                    { type: "button", options: { text: "保存", iconCls: "icon-save" } }, "-",
+                    { type: "button", options: { text: "刷新", iconCls: "icon-reload" } }, "-",
+                    { type: "combobox", options: { valueField: "id", textField: "text", width: 140 } }
+                ]
+            });
+
+
+            $("#btn1").click(function () { t.toolbar("enable"); });
+
+            $("#btn2").click(function () { t.toolbar("disable"); });
+
+            $("#btn3").click(function () { t.toolbar("enableItem", 1); });
+
+            $("#btn4").click(function () { t.toolbar("disableItem", 1); });
+
+            $("#btn5").click(function () {
+                t.toolbar("loadData", [
+                    { "type": "label", "options": { "text": "学号：" } },
+                    { "type": "textbox", "id": "userName", "options": { "width": 100 } },
+                    "姓名：",
+                    { "type": "textbox", "id": "password", "options": { "width": 100 } },
+                    "-",
+                    "年龄：",
+                    { "type": "numberspinner", "options": { "width": 100, "value": 20, "min": 10, "max": 30, "disabled": true } }
+                ]);
+            });
+
+            $("#btn6").click(function () { t.toolbar("load"); });
+
+            $("#btn7").click(function () { t.toolbar("setItemFocus", 0); });
+
+            $("#btn8").click(function () { t.toolbar("setItemFocus", 1); });
+
+            $("#btn9").click(function () { t.toolbar("setItemFocus", 8); });
+
+            $("#btn10").click(function () { t.toolbar("setItemFocus", 9); });
+        });
+    </script>
+
+    <h2>jEasyUI ToolBar Plugin Extensions - 动态数据加载</h2>
+    <p>该部分扩展由文件 jquery.toolbar.js 实现。</p>
+    <hr />
+    <input id="btn1" type="button" value="enable 全部" />
+    <input id="btn2" type="button" value="disable 全部" />
+    <input id="btn3" type="button" value="enable 用户名输入框" />
+    <input id="btn4" type="button" value="disable 用户名输入框" />
+    <input id="btn5" type="button" value="重新加载数据" />
+    <input id="btn6" type="button" value="重新加载远程数据" />
+    <hr />
+    <input id="btn7" type="button" value="setItemFocus 0" />
+    <input id="btn8" type="button" value="setItemFocus 1" />
+    <input id="btn9" type="button" value="setItemFocus 8" />
+    <input id="btn10" type="button" value="setItemFocus 9" />
+    <hr />
+    <div id="tt1"></div>
+    <br /><br />
+    <div class="easyui-toolbar">
+        <input class="easyui-validatebox" data-options="prompt: '拟定企业名称'" style="width: 100px;" />
+        <span>-</span>
+        <input class="easyui-validatebox" data-options="prompt: '企业类型'" style="width: 100px;" />
+        <span>-</span>
+        <input class="easyui-validatebox" data-options="prompt: '法人'" style="width: 100px;" />
+        <span>-</span>
+        <input class="easyui-datebox" data-options="prompt: '核查有效期', width: 100" />
+        <span>-</span>
+        <label>
+            <input type="checkbox" />
+            <span>选择我</span>
+        </label>
+        <span>-</span>
+        <span>asdfasdfasdf</span>
+    </div>
+    <br /><br />
+    <div id="tt2"></div>
+</div>

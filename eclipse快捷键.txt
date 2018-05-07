@@ -1,0 +1,32 @@
+二、常用快捷键
+eclipse提供了丰富的快捷操作，默认提供很多，我们也可以自己手动设置。希望读者朋友们积极补充，不断完善！
+
+文本编辑
+查找并替换 Ctrl+F                  查找上一个 Ctrl+Shift+K                查找下一个 Ctrl+K         撤销 Ctrl+Z       重做 Ctrl+Y       复制 Ctrl+C 
+快速修正 Ctrl1+1                    恢复上一个选择 Alt+Shift+↓           内容辅助 Alt+/               剪切 Ctrl+X       删除 Delete       存盘 Ctrl+s
+全部选中 Ctrl+A                     上下文信息 Alt+？                          全局 放大 Ctrl+=           全局 缩小 Ctrl+-              跳转到类、变量的声明 F3     
+代码格式化 Ctrl+Shift+f          导入未引用的包 Ctrl+Shift+M         关闭单个窗口 Ctrl+w     整理导入 Ctrl+Shift+o     添加导入 Ctrl+Shift+M
+注释代码 Ctrl+/                       取消注释 Ctrl+/                              查找工程中的类 Ctrl+shift+T                               组织导入 Ctrl+Shift+O                      
+改写切换 Insert                      上滚行 Ctrl+↑                                  下滚行 Ctrl+↓    J          切换窗口 Ctrl+f6（改为alt+tab更方便）
+调试
+断点单步运行 F6                   断点进入方法体执行 F5                  运行上次程序 F11                 调试上次程序 Ctrl + F11
+单步返回 F7                         单步跳入选择 Ctrl+F5                      继续 F8                                 使用过滤器单步执行 Shift+F5 
+显示 Ctrl+D                          运行上次启动 Ctrl+F11                    运行至行 Ctrl+R                     添加/去除断点 Ctrl+Shift+B 
+全局 执行 Ctrl+U                  自动修正Ctrl+1
+窗口
+激活编辑器 F12                     切换编辑器 Ctrl+Shift+W                 上一个编辑器 Ctrl+Shift+F6                上一个视图 Ctrl+Shift+F7 
+显示系统菜单 Alt+-                显示标尺上下文菜单 Ctrl+W             上一个透视图 Ctrl+Shift+F8                下一个编辑器 Ctrl+F6 
+显示视图菜单 Ctrl+F10         下一个视图 Ctrl+F7                           下一个透视图 Ctrl+F8 
+导航
+打开结构 Ctrl+F3                  打开类型 Ctrl+Shift+T                 打开类型层次结构 F4             打开声明 F3            打开外部JavaDoc Shift+F2 
+打开资源 Ctrl+Shift+R          后退历史记录 Alt+←                    前进历史记录 Alt+→              上一个 Ctrl+,            下一个 Ctrl+. 
+显示大纲 Ctrl+O                   转至上一个成员 Ctrl+Shift+↑        转至上一个编辑位置 Ctrl+Q    在层次结构中打开类型 Ctrl+Shift+H 
+转至行 Ctrl+L                       转至下一个成员 Ctrl+Shift+↓        转至匹配的括号 Ctrl+Shift+P
+搜索
+出现在文件中 Ctrl+Shift+U          打开搜索对话框 Ctrl+H           工作区中的声明 Ctrl+G           工作区中的引用 Ctrl+Shift+G 
+文件
+全部保存 Ctrl+Shift+S          剪切 Ctrl+X                         保存 Ctrl+S                打印 Ctrl+P                关闭 Ctrl+F4 
+全部关闭 Ctrl+Shift+F4        属性 Alt+Enter                    新建 Ctrl+N                项目全部构建 Ctrl+B
+重构
+撤销重构 Alt+Shift+Z           抽取方法 Alt+Shift+M          抽取局部变量 Alt+Shift+L          内联 Alt+Shift+I 
+移动 Alt+Shift+V                 重命名 Alt+Shift+R              重做 Alt+Shift+Y
