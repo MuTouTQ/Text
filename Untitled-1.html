@@ -1,0 +1,258 @@
+<!-- 箱进出场场站合同 -->
+<meta charset=" UTF-8" />
+<script src="../js/hdEzuiEx_js/list-detail.js"></script>
+<div id="mainCont" data-options="fit:true" style="width:100%;height:100%;">
+    <div style="height: 100%; width: 100%;">
+        <div class="easyui-layout" data-options="fit:true" style="height: 100%;width:100%;">
+            <div id="ContractCntrPassButton" data-options="region:'north',split:true" style="height:45px;margin-right:10px;margin-top:3px;">
+                <div style="padding-top:6px;float:right; padding-right:10px;">
+                    <shiro:hasPermission name="webresources:login:ContracCntrPass:add">
+                        <a class="easyui-linkbutton" iconCls="icon-add" plain="false">增加</a>
+                    </shiro:hasPermission>
+                    <shiro:hasPermission name="webresources:login:ContracCntrPass:save">
+                        <a class="easyui-linkbutton" iconCls="icon-save" plain="false">保存</a>
+                    </shiro:hasPermission>
+                    <shiro:hasPermission name="webresources:login:ContracCntrPass:SearchContDetl">
+                        <a class="easyui-linkbutton" iconCls="icon-Search" plain="false">合同列表</a>
+                    </shiro:hasPermission>
+                    <shiro:hasPermission name="webresources:login:ContracCntrPass:others">
+                        <a class="easyui-linkbutton" iconCls="icon-others" plain="false">杂项</a>
+                    </shiro:hasPermission>
+                    <shiro:hasPermission name="webresources:login:ContracCntrPass:cntrDetl">
+                        <a class="easyui-linkbutton" iconCls="icon-cntrDetl" plain="false">箱明细</a>
+                    </shiro:hasPermission>
+                    <shiro:hasPermission name="webresources:login:ContracCntrPass:planList">
+                        <a class="easyui-linkbutton" iconCls="icon-planList" plain="false">计划列表</a>
+                    </shiro:hasPermission>
+                    <shiro:hasPermission name="webresources:login:ContracCntrPass:print">
+                        <a class="easyui-linkbutton" iconCls="icon-print" plain="false">打印</a>
+                    </shiro:hasPermission>
+                </div>
+            </div>
+            <div data-options="region:'center'">
+                <div class="easyui-layout" data-options="fit:true" style="width:100%;height:100%;">
+                    <div id="ContractCntrDetailMain" data-options="region:'north',split:true" style="height:250px;width:100%;">
+                        <div style="height:100%; width:100%;">
+                            <div style="text-align: center;">
+                                <h2 style="display: inline;">箱进出场作业合同（
+                                    <span id="contractNo" name="contractNo" style="border:0px;width:150px;" data-options="required:false" class="easyui-validatebox"></span>）</h1>
+                            </div>
+                            <div id="ContractCntrDetail" style="width:100%;height:200px;margin-top:20px;">
+                                <form id="ContractCntrFormDetail">
+                                    <table align="center" border="1px" bordercolor="#ddd" cellspacing="0">
+                                        <tr>
+                                            <th>委托人：</th>
+                                            <td>
+                                                <input id="contId" name="contId" hidden='true' />
+                                                <input id="client" name="client" style="border:0px;width:150px;" data-options="required:false" class="easyui-validatebox" />
+                                            </td>
+                                            <th>委托经办人：</th>
+                                            <td>
+                                                <input id="clientOpera" name="clientOpera" style="border:0px;width:110px;" data-options="required:false" class="easyui-validatebox" />
+                                            </td>
+                                            <th>联系电话：</th>
+                                            <td>
+                                                <input id="clientOperaPhone" name="clientOperaPhone" style="border:0px;width:150px;" data-options="required:false,validType:['telephone']" class="easyui-validatebox" onkeyup="value=value.replace(/[^\d]/g,'')" />
+                                            </td>
+                                            <th>委托日期：</th>
+                                            <td>
+                                                <input id="signTim" name="signTim" style="border:0px;width:110px;" data-options="required:false" class="easyui-datebox" />
+                                            </td>
+                                            <th>作业地点：</th>
+                                            <td>
+                                                <input id="workPlace" name="workPlace" style="border:0px;width:150px;" data-options="required:false" class="easyui-validatebox" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>受托人：</th>
+                                            <td>
+                                                <input id="fiduciary" name="fiduciary" style="border:0px;width:150px;" data-options="required:false" class="easyui-validatebox" />
+                                            </td>
+                                            <th>受托经办人：</th>
+                                            <td>
+                                                <input id="fiduciaryOpera" name="fiduciaryOpera" style="border:0px;width:110px;" data-options="required:false" class="easyui-validatebox" />
+                                            </td>
+                                            <th>联系电话：</th>
+                                            <td>
+                                                <input id="fiduciaryPhone" name="fiduciaryPhone" style="border:0px;width:150px;" data-options="required:false,validType:['telephone']" class="easyui-validatebox" />
+                                            </td>
+                                            <th>受托日期：</th>
+                                            <td>
+                                                <input id="fiduciaryTim" name="fiduciaryTim" style="border:0px;width:110px;" data-options="required:false" class="easyui-datebox" />
+                                            </td>
+                                            <th>有效日期：</th>
+                                            <td>
+                                                <input id="validityTim" name="validityTim" style="border:0px;width:150px;" data-options="required:false" class="easyui-datebox" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>船名：</th>
+                                            <td>
+                                                <input id="shipNam" name="shipNam" style="border:0px;" data-options="required:false" class="easyui-validatebox" />
+                                            </td>
+                                            <th>航次：</th>
+                                            <td>
+                                                <input id="voyage" name="voyage" style="border:0px;width:110px;" data-options="required:false" class="easyui-validatebox" />
+                                            </td>
+                                            <th>提单号： </th>
+                                            <td colspan="2">
+                                                <input id="billNo" name="billNo" style="border:0px;width:210px;" autocomplete="off" data-options="required:false" class="easyui-validatebox" />
+                                            </td>
+
+                                            <td rowspan="4" colspan="3">
+                                                <textarea id="workRequir" name="workRequir" data-options="required:false" class="easyui-validate" style="height:99%;width:99%;border:0px;"></textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>码头：</th>
+                                            <td>
+                                                <input id="dockId" name="dockId" style="border:0px;width:150px;" data-options="required:false" class="easyui-validatebox" />
+                                            </td>
+                                            <th>码头场区：</th>
+                                            <td>
+                                                <input id="discPort" name="discPort" style="border:0px;width:110px;" data-options="required:false" class="easyui-validatebox" />
+                                            </td>
+                                            <th>贸易性质：</th>
+                                            <td>
+                                                <input id="tradeId" name="tradeId" style="border:0px;width:150px;" data-options="required:true" class="easyui-validatebox" />
+                                            </td>
+                                            <th rowspan="3">作业要求：</th>
+                                        </tr>
+                                        <tr>
+                                            <th>协议名称：</th>
+                                            <td>
+                                                <input id="agreeId" name="agreeId" style="border:0px;width:150px;" data-options="required:false" class="easyui-validatebox" />
+                                            </td>
+                                            <th>作业类型：</th>
+                                            <td>
+                                                <input id="workTyp" name="workTyp" style="border:0px;width:150px;" data-options="required:false" class="easyui-validatebox" />
+                                            </td>
+                                            <th>结算方式：</th>
+                                            <td>
+                                                <input id="payWay" name="payWay" style="border:0px;width:150px;" readonly="readonly" data-options="required:false" class="easyui-validatebox" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>合同总额：</th>
+                                            <td>
+                                                <input id="contAmount" name="contAmount" style="border:0px;width:150px;" data-options="required:false" class="easyui-validatebox" readonly/>
+                                            </td>
+                                            <th>金额大写：</th>
+                                            <td colspan="3">
+                                                <input id="contAmountDX" style="border:0px;width:325px;" data-options="required:false" readonly="readonly" />
+                                            </td>
+                                        </tr>
+                                        <tr hidden="true">
+                                            <input id="payCorp" name="payCorp" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="contractStat" name="contractStat" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="corpId" name="corpId" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="deptId" name="deptId" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="recNam" name="recNam" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="recTim" name="recTim" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="updNam" name="updNam" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="updTim" name="updTim" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="corpId" name="corpId" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="deptId" name="deptId" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="stateId" name="stateId" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="recUserId" name="recUserId" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="contAgreeId" name="contAgreeId" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="clientTim" name="clientTim" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="cncelTim" name="cncelTim" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="cncelNam" name="cncelNam" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="finishId" name="finishId" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="finishNam" name="finishNam" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="finishTim" name="finishTim" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="actualAmount" name="actualAmount" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="operationAmount" name="operationAmount" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="yardDeptId" name="yardDeptId" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="confirmId" name="confirmId" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="confirmNam" name="confirmNam" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="confirmTim" name="confirmTim" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="feeModel" name="feeModel" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                            <input id="payMent" name="payMent" data-options="required:false" class="easyui-validatebox" hidden="true" />
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="planinfo" data-options="region:'center'" style="width:100%;">
+                        <div class="easyui-tabs" style="width:100%;height:100%;" data-options="fit:true ,tools:'#tab-tools'">
+                            <div title="合同箱" style="width:100%;height:100%;">
+                                <table id="ContractCntrCntrDatagird"></table>
+                            </div>
+                        </div>
+                        <div id="tab-tools">
+                            <shiro:hasPermission name="webresources:login:contractCntr:add">
+                                <a class="easyui-linkbutton" id="contractCntrDetailAdd" iconCls="icon-add" plain="false">增加</a>
+                            </shiro:hasPermission>
+                            <shiro:hasPermission name="webresources:login:contractCntr:inYardCntrAdd">
+                                <a class="easyui-linkbutton" iconCls="icon-inYardCntrAdd" plain="false">在场箱增加</a>
+                            </shiro:hasPermission>
+                            <shiro:hasPermission name="webresources:login:contractCntr:cancel">
+                                <a class="easyui-linkbutton" iconCls="icon-cancel" plain="false">取消</a>
+                            </shiro:hasPermission>
+                        </div>
+                    </div>
+                    <div data-options="region:'south',split:true" style="height:370px;">
+                        <div id="ContractPassPlanTab" class="easyui-tabs" style="width:100%;height:100%;" data-options="fit:true ,tools:'#plantab-tools'">
+                            <div id="CNTRDOOR" title="进出场主计划">
+                                <table id="contractCntrPlansDatagrid"></table>
+                            </div>
+                            <div id="CNTRJG" title="集港计划">
+                                <table id="contractCntrPassJGPlansDatagrid"></table>
+                            </div>
+                        </div>
+                        <div id="plantab-tools">
+                            <shiro:hasPermission name="webresources:login:contractPlans:remove">
+                                <a class="easyui-linkbutton" iconCls="icon-remove" plain="false">删除</a>
+                            </shiro:hasPermission>
+                            <shiro:hasPermission name="webresources:login:contractPlans:save">
+                                <a class="easyui-linkbutton" iconCls="icon-save" plain="false">保存</a>
+                            </shiro:hasPermission>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="width:100%;height:100%;">
+        <div class="easyui-layout" data-options="fit:true" style="width:100%;height:100%;">
+            <div data-options="region:'north'" style="height:35px;with:100%;float:right;">
+                <div id="ContDetailToolBar" style="float: left;padding-top: 6px;padding-right: 6px;">
+                    &nbsp;&nbsp; 签订日期：
+                    <input id="startTimeCont" name="signTim" class="easyui-datebox" style="width:100px;float:left;"> -
+                    <input id="endTimeCont" name="signTim" class="easyui-datebox" style="width:100px;float:left;">
+                    <shiro:hasPermission name="webresources:login:ContracYard:searchCont">
+                        <a class="easyui-linkbutton" iconCls="icon-searchCont" plain="false">查询</a>
+                    </shiro:hasPermission>
+                    <!--   <shiro:hasPermission name="webresources:login:ContracYard:print">
+                        <a class="easyui-linkbutton" iconCls="icon-print" plain="false">打印</a>
+                    </shiro:hasPermission> -->
+                    <shiro:hasPermission name="webresources:login:ContracYard:revise">
+                        <a class="easyui-linkbutton" iconCls="icon-revise" plain="false">改单</a>
+                    </shiro:hasPermission>
+                    <shiro:hasPermission name="webresources:login:ContracYard:copy">
+                        <a class="easyui-linkbutton" iconCls="icon-copy" plain="false">合同复制</a>
+                    </shiro:hasPermission>
+                    <shiro:hasPermission name="webresources:login:ContracYard:DropCont">
+                        <a class="easyui-linkbutton" iconCls="icon-DropCont" plain="false">作废</a>
+                    </shiro:hasPermission>
+                    <shiro:hasPermission name="webresources:login:ContracYard:Acceptance">
+                        <a class="easyui-linkbutton" iconCls="icon-Acceptance" plain="false">受理</a>
+                    </shiro:hasPermission>
+                    <shiro:hasPermission name="webresources:login:ContracYard:reloadCont">
+                        <a class="easyui-linkbutton" iconCls="icon-reloadCont" plain="false">刷新</a>
+                    </shiro:hasPermission>
+                    <shiro:hasPermission name="webresources:login:ContracYard:Return">
+                        <a class="easyui-linkbutton" iconCls="icon-searchReturn" plain="false">返回</a>
+                    </shiro:hasPermission>
+                </div>
+            </div>
+            <div id="ContractYardCntrSelectDatagirdDiv" data-options="region:'center'">
+                <table id="ContractYardCntrSelectDatagird"></table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src='../login/contract/contractCntrPass.js'></script>
